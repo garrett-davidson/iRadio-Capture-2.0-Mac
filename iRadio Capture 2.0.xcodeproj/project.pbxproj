@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D2B03EA17B13F2E009F79FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B03E917B13F2E009F79FD /* Cocoa.framework */; };
+		0D2B03F417B13F2E009F79FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03F217B13F2E009F79FD /* InfoPlist.strings */; };
+		0D2B03F617B13F2E009F79FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B03F517B13F2E009F79FD /* main.m */; };
+		0D2B03FA17B13F2E009F79FD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03F817B13F2E009F79FD /* Credits.rtf */; };
+		0D2B03FD17B13F2E009F79FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B03FC17B13F2E009F79FD /* AppDelegate.m */; };
+		0D2B040017B13F2F009F79FD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03FE17B13F2F009F79FD /* MainMenu.xib */; };
+		0D2B040317B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B040117B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld */; };
+		0D2B040B17B13F2F009F79FD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B040A17B13F2F009F79FD /* SenTestingKit.framework */; };
+		0D2B040C17B13F2F009F79FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B03E917B13F2E009F79FD /* Cocoa.framework */; };
+		0D2B041417B13F2F009F79FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B041217B13F2F009F79FD /* InfoPlist.strings */; };
+		0D2B041717B13F2F009F79FD /* iRadio_Capture_2_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B041617B13F2F009F79FD /* iRadio_Capture_2_0Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D2B040D17B13F2F009F79FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D2B03DE17B13F2E009F79FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D2B03E517B13F2E009F79FD;
+			remoteInfo = "iRadio Capture 2.0";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D2B03E617B13F2E009F79FD /* iRadio Capture 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iRadio Capture 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2B03E917B13F2E009F79FD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D2B03EC17B13F2E009F79FD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0D2B03ED17B13F2E009F79FD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0D2B03EE17B13F2E009F79FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0D2B03F117B13F2E009F79FD /* iRadio Capture 2.0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iRadio Capture 2.0-Info.plist"; sourceTree = "<group>"; };
+		0D2B03F317B13F2E009F79FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D2B03F517B13F2E009F79FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D2B03F717B13F2E009F79FD /* iRadio Capture 2.0-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iRadio Capture 2.0-Prefix.pch"; sourceTree = "<group>"; };
+		0D2B03F917B13F2E009F79FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0D2B03FB17B13F2E009F79FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D2B03FC17B13F2E009F79FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0D2B03FF17B13F2F009F79FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0D2B040217B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iRadio_Capture_2_0.xcdatamodel; sourceTree = "<group>"; };
+		0D2B040917B13F2F009F79FD /* iRadio Capture 2.0Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iRadio Capture 2.0Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2B040A17B13F2F009F79FD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0D2B041117B13F2F009F79FD /* iRadio Capture 2.0Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iRadio Capture 2.0Tests-Info.plist"; sourceTree = "<group>"; };
+		0D2B041317B13F2F009F79FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D2B041517B13F2F009F79FD /* iRadio_Capture_2_0Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iRadio_Capture_2_0Tests.h; sourceTree = "<group>"; };
+		0D2B041617B13F2F009F79FD /* iRadio_Capture_2_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iRadio_Capture_2_0Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D2B03E317B13F2E009F79FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2B03EA17B13F2E009F79FD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2B040517B13F2F009F79FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2B040B17B13F2F009F79FD /* SenTestingKit.framework in Frameworks */,
+				0D2B040C17B13F2F009F79FD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D2B03DD17B13F2E009F79FD = {
+			isa = PBXGroup;
+			children = (
+				0D2B03EF17B13F2E009F79FD /* iRadio Capture 2.0 */,
+				0D2B040F17B13F2F009F79FD /* iRadio Capture 2.0Tests */,
+				0D2B03E817B13F2E009F79FD /* Frameworks */,
+				0D2B03E717B13F2E009F79FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D2B03E717B13F2E009F79FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B03E617B13F2E009F79FD /* iRadio Capture 2.0.app */,
+				0D2B040917B13F2F009F79FD /* iRadio Capture 2.0Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D2B03E817B13F2E009F79FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B03E917B13F2E009F79FD /* Cocoa.framework */,
+				0D2B040A17B13F2F009F79FD /* SenTestingKit.framework */,
+				0D2B03EB17B13F2E009F79FD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D2B03EB17B13F2E009F79FD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B03EC17B13F2E009F79FD /* AppKit.framework */,
+				0D2B03ED17B13F2E009F79FD /* CoreData.framework */,
+				0D2B03EE17B13F2E009F79FD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0D2B03EF17B13F2E009F79FD /* iRadio Capture 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B03FB17B13F2E009F79FD /* AppDelegate.h */,
+				0D2B03FC17B13F2E009F79FD /* AppDelegate.m */,
+				0D2B03FE17B13F2F009F79FD /* MainMenu.xib */,
+				0D2B040117B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld */,
+				0D2B03F017B13F2E009F79FD /* Supporting Files */,
+			);
+			path = "iRadio Capture 2.0";
+			sourceTree = "<group>";
+		};
+		0D2B03F017B13F2E009F79FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B03F117B13F2E009F79FD /* iRadio Capture 2.0-Info.plist */,
+				0D2B03F217B13F2E009F79FD /* InfoPlist.strings */,
+				0D2B03F517B13F2E009F79FD /* main.m */,
+				0D2B03F717B13F2E009F79FD /* iRadio Capture 2.0-Prefix.pch */,
+				0D2B03F817B13F2E009F79FD /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D2B040F17B13F2F009F79FD /* iRadio Capture 2.0Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B041517B13F2F009F79FD /* iRadio_Capture_2_0Tests.h */,
+				0D2B041617B13F2F009F79FD /* iRadio_Capture_2_0Tests.m */,
+				0D2B041017B13F2F009F79FD /* Supporting Files */,
+			);
+			path = "iRadio Capture 2.0Tests";
+			sourceTree = "<group>";
+		};
+		0D2B041017B13F2F009F79FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B041117B13F2F009F79FD /* iRadio Capture 2.0Tests-Info.plist */,
+				0D2B041217B13F2F009F79FD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D2B03E517B13F2E009F79FD /* iRadio Capture 2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D2B041A17B13F2F009F79FD /* Build configuration list for PBXNativeTarget "iRadio Capture 2.0" */;
+			buildPhases = (
+				0D2B03E217B13F2E009F79FD /* Sources */,
+				0D2B03E317B13F2E009F79FD /* Frameworks */,
+				0D2B03E417B13F2E009F79FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iRadio Capture 2.0";
+			productName = "iRadio Capture 2.0";
+			productReference = 0D2B03E617B13F2E009F79FD /* iRadio Capture 2.0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D2B040817B13F2F009F79FD /* iRadio Capture 2.0Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D2B041D17B13F2F009F79FD /* Build configuration list for PBXNativeTarget "iRadio Capture 2.0Tests" */;
+			buildPhases = (
+				0D2B040417B13F2F009F79FD /* Sources */,
+				0D2B040517B13F2F009F79FD /* Frameworks */,
+				0D2B040617B13F2F009F79FD /* Resources */,
+				0D2B040717B13F2F009F79FD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D2B040E17B13F2F009F79FD /* PBXTargetDependency */,
+			);
+			name = "iRadio Capture 2.0Tests";
+			productName = "iRadio Capture 2.0Tests";
+			productReference = 0D2B040917B13F2F009F79FD /* iRadio Capture 2.0Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D2B03DE17B13F2E009F79FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Garrett Davidson";
+			};
+			buildConfigurationList = 0D2B03E117B13F2E009F79FD /* Build configuration list for PBXProject "iRadio Capture 2.0" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0D2B03DD17B13F2E009F79FD;
+			productRefGroup = 0D2B03E717B13F2E009F79FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D2B03E517B13F2E009F79FD /* iRadio Capture 2.0 */,
+				0D2B040817B13F2F009F79FD /* iRadio Capture 2.0Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D2B03E417B13F2E009F79FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2B03F417B13F2E009F79FD /* InfoPlist.strings in Resources */,
+				0D2B03FA17B13F2E009F79FD /* Credits.rtf in Resources */,
+				0D2B040017B13F2F009F79FD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2B040617B13F2F009F79FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2B041417B13F2F009F79FD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D2B040717B13F2F009F79FD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D2B03E217B13F2E009F79FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2B03F617B13F2E009F79FD /* main.m in Sources */,
+				0D2B03FD17B13F2E009F79FD /* AppDelegate.m in Sources */,
+				0D2B040317B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2B040417B13F2F009F79FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2B041717B13F2F009F79FD /* iRadio_Capture_2_0Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D2B040E17B13F2F009F79FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D2B03E517B13F2E009F79FD /* iRadio Capture 2.0 */;
+			targetProxy = 0D2B040D17B13F2F009F79FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D2B03F217B13F2E009F79FD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2B03F317B13F2E009F79FD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0D2B03F817B13F2E009F79FD /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2B03F917B13F2E009F79FD /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0D2B03FE17B13F2F009F79FD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2B03FF17B13F2F009F79FD /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0D2B041217B13F2F009F79FD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2B041317B13F2F009F79FD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D2B041817B13F2F009F79FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0D2B041917B13F2F009F79FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0D2B041B17B13F2F009F79FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRadio Capture 2.0/iRadio Capture 2.0-Prefix.pch";
+				INFOPLIST_FILE = "iRadio Capture 2.0/iRadio Capture 2.0-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0D2B041C17B13F2F009F79FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRadio Capture 2.0/iRadio Capture 2.0-Prefix.pch";
+				INFOPLIST_FILE = "iRadio Capture 2.0/iRadio Capture 2.0-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0D2B041E17B13F2F009F79FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iRadio Capture 2.0.app/Contents/MacOS/iRadio Capture 2.0";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRadio Capture 2.0/iRadio Capture 2.0-Prefix.pch";
+				INFOPLIST_FILE = "iRadio Capture 2.0Tests/iRadio Capture 2.0Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0D2B041F17B13F2F009F79FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iRadio Capture 2.0.app/Contents/MacOS/iRadio Capture 2.0";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRadio Capture 2.0/iRadio Capture 2.0-Prefix.pch";
+				INFOPLIST_FILE = "iRadio Capture 2.0Tests/iRadio Capture 2.0Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D2B03E117B13F2E009F79FD /* Build configuration list for PBXProject "iRadio Capture 2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2B041817B13F2F009F79FD /* Debug */,
+				0D2B041917B13F2F009F79FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D2B041A17B13F2F009F79FD /* Build configuration list for PBXNativeTarget "iRadio Capture 2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2B041B17B13F2F009F79FD /* Debug */,
+				0D2B041C17B13F2F009F79FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0D2B041D17B13F2F009F79FD /* Build configuration list for PBXNativeTarget "iRadio Capture 2.0Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2B041E17B13F2F009F79FD /* Debug */,
+				0D2B041F17B13F2F009F79FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0D2B040117B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0D2B040217B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodel */,
+			);
+			currentVersion = 0D2B040217B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodel */;
+			path = iRadio_Capture_2_0.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0D2B03DE17B13F2E009F79FD /* Project object */;
+}
