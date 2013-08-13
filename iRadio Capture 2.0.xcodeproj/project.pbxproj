@@ -7,17 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0810AD17B6E2B200BF5E6D /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0810AC17B6E2B200BF5E6D /* ScriptingBridge.framework */; };
+		0D0810B317B700B600BF5E6D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0810B217B700B600BF5E6D /* AVFoundation.framework */; };
+		0D0810BF17B70F2600BF5E6D /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0810BD17B70F2600BF5E6D /* PreferencesWindowController.m */; };
+		0D0810C017B70F2600BF5E6D /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0810BD17B70F2600BF5E6D /* PreferencesWindowController.m */; };
+		0D0810C117B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0810BE17B70F2600BF5E6D /* PreferencesWindowController.xib */; };
+		0D0810C217B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0810BE17B70F2600BF5E6D /* PreferencesWindowController.xib */; };
 		0D2B03EA17B13F2E009F79FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B03E917B13F2E009F79FD /* Cocoa.framework */; };
 		0D2B03F417B13F2E009F79FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03F217B13F2E009F79FD /* InfoPlist.strings */; };
 		0D2B03F617B13F2E009F79FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B03F517B13F2E009F79FD /* main.m */; };
 		0D2B03FA17B13F2E009F79FD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03F817B13F2E009F79FD /* Credits.rtf */; };
 		0D2B03FD17B13F2E009F79FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B03FC17B13F2E009F79FD /* AppDelegate.m */; };
-		0D2B040017B13F2F009F79FD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03FE17B13F2F009F79FD /* MainMenu.xib */; };
 		0D2B040317B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B040117B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld */; };
 		0D2B040B17B13F2F009F79FD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B040A17B13F2F009F79FD /* SenTestingKit.framework */; };
 		0D2B040C17B13F2F009F79FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B03E917B13F2E009F79FD /* Cocoa.framework */; };
 		0D2B041417B13F2F009F79FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B041217B13F2F009F79FD /* InfoPlist.strings */; };
 		0D2B041717B13F2F009F79FD /* iRadio_Capture_2_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B041617B13F2F009F79FD /* iRadio_Capture_2_0Tests.m */; };
+		0D2B042117B13FD9009F79FD /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B042017B13FD9009F79FD /* icon.icns */; };
+		0D2B042517B1459C009F79FD /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B042317B1459C009F79FD /* MainWindowController.m */; };
+		0D2B042617B1459C009F79FD /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B042417B1459C009F79FD /* MainWindowController.xib */; };
+		0D391E2917B178B8008C15A3 /* assniffer in Resources */ = {isa = PBXBuildFile; fileRef = 0D391E1417B178B8008C15A3 /* assniffer */; };
+		0D391E2A17B178B8008C15A3 /* changelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D391E1517B178B8008C15A3 /* changelog.txt */; };
+		0D391E2B17B178B8008C15A3 /* license in Resources */ = {isa = PBXBuildFile; fileRef = 0D391E1617B178B8008C15A3 /* license */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0810AB17B6DB7D00BF5E6D /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunes.h; path = ../iTunes.h; sourceTree = "<group>"; };
+		0D0810AC17B6E2B200BF5E6D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		0D0810B217B700B600BF5E6D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0D0810BC17B70F2600BF5E6D /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesWindowController.h; path = ../PreferencesWindowController.h; sourceTree = "<group>"; };
+		0D0810BD17B70F2600BF5E6D /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesWindowController.m; path = ../PreferencesWindowController.m; sourceTree = "<group>"; };
+		0D0810BE17B70F2600BF5E6D /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesWindowController.xib; path = ../PreferencesWindowController.xib; sourceTree = "<group>"; };
 		0D2B03E617B13F2E009F79FD /* iRadio Capture 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iRadio Capture 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2B03E917B13F2E009F79FD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D2B03EC17B13F2E009F79FD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -43,7 +60,6 @@
 		0D2B03F917B13F2E009F79FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		0D2B03FB17B13F2E009F79FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0D2B03FC17B13F2E009F79FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0D2B03FF17B13F2F009F79FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0D2B040217B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iRadio_Capture_2_0.xcdatamodel; sourceTree = "<group>"; };
 		0D2B040917B13F2F009F79FD /* iRadio Capture 2.0Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iRadio Capture 2.0Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2B040A17B13F2F009F79FD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -51,6 +67,29 @@
 		0D2B041317B13F2F009F79FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D2B041517B13F2F009F79FD /* iRadio_Capture_2_0Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iRadio_Capture_2_0Tests.h; sourceTree = "<group>"; };
 		0D2B041617B13F2F009F79FD /* iRadio_Capture_2_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iRadio_Capture_2_0Tests.m; sourceTree = "<group>"; };
+		0D2B042017B13FD9009F79FD /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		0D2B042217B1459C009F79FD /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		0D2B042317B1459C009F79FD /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		0D2B042417B1459C009F79FD /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		0D2B042717B147D0009F79FD /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		0D391E1417B178B8008C15A3 /* assniffer */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = assniffer; sourceTree = "<group>"; };
+		0D391E1517B178B8008C15A3 /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
+		0D391E1617B178B8008C15A3 /* license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license; sourceTree = "<group>"; };
+		0D391E1917B178B8008C15A3 /* http.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = http.cpp; sourceTree = "<group>"; };
+		0D391E1A17B178B8008C15A3 /* http.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c; fileEncoding = 4; path = http.h; sourceTree = "<group>"; };
+		0D391E1B17B178B8008C15A3 /* http.o */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = http.o; sourceTree = "<group>"; };
+		0D391E1C17B178B8008C15A3 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		0D391E1D17B178B8008C15A3 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		0D391E1E17B178B8008C15A3 /* sniff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sniff.cpp; sourceTree = "<group>"; };
+		0D391E1F17B178B8008C15A3 /* sniff.dsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sniff.dsp; sourceTree = "<group>"; };
+		0D391E2017B178B8008C15A3 /* sniff.dsw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sniff.dsw; sourceTree = "<group>"; };
+		0D391E2117B178B8008C15A3 /* sniff.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = sniff.o; sourceTree = "<group>"; };
+		0D391E2217B178B8008C15A3 /* tcp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tcp.cpp; sourceTree = "<group>"; };
+		0D391E2317B178B8008C15A3 /* tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcp.h; sourceTree = "<group>"; };
+		0D391E2417B178B8008C15A3 /* tcp.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = tcp.o; sourceTree = "<group>"; };
+		0D391E2617B178B8008C15A3 /* heapbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heapbuf.h; sourceTree = "<group>"; };
+		0D391E2717B178B8008C15A3 /* ptrlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptrlist.h; sourceTree = "<group>"; };
+		0D391E2817B178B8008C15A3 /* queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0810B317B700B600BF5E6D /* AVFoundation.framework in Frameworks */,
+				0D0810AD17B6E2B200BF5E6D /* ScriptingBridge.framework in Frameworks */,
 				0D2B03EA17B13F2E009F79FD /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +118,8 @@
 		0D2B03DD17B13F2E009F79FD = {
 			isa = PBXGroup;
 			children = (
+				0D2B042017B13FD9009F79FD /* icon.icns */,
+				0D391E1317B178B8008C15A3 /* assniffer02 */,
 				0D2B03EF17B13F2E009F79FD /* iRadio Capture 2.0 */,
 				0D2B040F17B13F2F009F79FD /* iRadio Capture 2.0Tests */,
 				0D2B03E817B13F2E009F79FD /* Frameworks */,
@@ -96,6 +139,8 @@
 		0D2B03E817B13F2E009F79FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D0810B217B700B600BF5E6D /* AVFoundation.framework */,
+				0D0810AC17B6E2B200BF5E6D /* ScriptingBridge.framework */,
 				0D2B03E917B13F2E009F79FD /* Cocoa.framework */,
 				0D2B040A17B13F2F009F79FD /* SenTestingKit.framework */,
 				0D2B03EB17B13F2E009F79FD /* Other Frameworks */,
@@ -116,9 +161,15 @@
 		0D2B03EF17B13F2E009F79FD /* iRadio Capture 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				0D2B042717B147D0009F79FD /* iTunes.h */,
 				0D2B03FB17B13F2E009F79FD /* AppDelegate.h */,
 				0D2B03FC17B13F2E009F79FD /* AppDelegate.m */,
-				0D2B03FE17B13F2F009F79FD /* MainMenu.xib */,
+				0D2B042217B1459C009F79FD /* MainWindowController.h */,
+				0D2B042317B1459C009F79FD /* MainWindowController.m */,
+				0D0810BC17B70F2600BF5E6D /* PreferencesWindowController.h */,
+				0D0810BD17B70F2600BF5E6D /* PreferencesWindowController.m */,
+				0D0810BE17B70F2600BF5E6D /* PreferencesWindowController.xib */,
+				0D2B042417B1459C009F79FD /* MainWindowController.xib */,
 				0D2B040117B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld */,
 				0D2B03F017B13F2E009F79FD /* Supporting Files */,
 			);
@@ -128,6 +179,7 @@
 		0D2B03F017B13F2E009F79FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0D0810AB17B6DB7D00BF5E6D /* iTunes.h */,
 				0D2B03F117B13F2E009F79FD /* iRadio Capture 2.0-Info.plist */,
 				0D2B03F217B13F2E009F79FD /* InfoPlist.strings */,
 				0D2B03F517B13F2E009F79FD /* main.m */,
@@ -154,6 +206,55 @@
 				0D2B041217B13F2F009F79FD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D391E1317B178B8008C15A3 /* assniffer02 */ = {
+			isa = PBXGroup;
+			children = (
+				0D391E1417B178B8008C15A3 /* assniffer */,
+				0D391E1517B178B8008C15A3 /* changelog.txt */,
+				0D391E1617B178B8008C15A3 /* license */,
+				0D391E1717B178B8008C15A3 /* source */,
+			);
+			path = assniffer02;
+			sourceTree = "<group>";
+		};
+		0D391E1717B178B8008C15A3 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				0D391E1817B178B8008C15A3 /* assniffer */,
+				0D391E2517B178B8008C15A3 /* WDL */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		0D391E1817B178B8008C15A3 /* assniffer */ = {
+			isa = PBXGroup;
+			children = (
+				0D391E1917B178B8008C15A3 /* http.cpp */,
+				0D391E1A17B178B8008C15A3 /* http.h */,
+				0D391E1B17B178B8008C15A3 /* http.o */,
+				0D391E1C17B178B8008C15A3 /* Makefile */,
+				0D391E1D17B178B8008C15A3 /* platform.h */,
+				0D391E1E17B178B8008C15A3 /* sniff.cpp */,
+				0D391E1F17B178B8008C15A3 /* sniff.dsp */,
+				0D391E2017B178B8008C15A3 /* sniff.dsw */,
+				0D391E2117B178B8008C15A3 /* sniff.o */,
+				0D391E2217B178B8008C15A3 /* tcp.cpp */,
+				0D391E2317B178B8008C15A3 /* tcp.h */,
+				0D391E2417B178B8008C15A3 /* tcp.o */,
+			);
+			path = assniffer;
+			sourceTree = "<group>";
+		};
+		0D391E2517B178B8008C15A3 /* WDL */ = {
+			isa = PBXGroup;
+			children = (
+				0D391E2617B178B8008C15A3 /* heapbuf.h */,
+				0D391E2717B178B8008C15A3 /* ptrlist.h */,
+				0D391E2817B178B8008C15A3 /* queue.h */,
+			);
+			path = WDL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +330,12 @@
 			files = (
 				0D2B03F417B13F2E009F79FD /* InfoPlist.strings in Resources */,
 				0D2B03FA17B13F2E009F79FD /* Credits.rtf in Resources */,
-				0D2B040017B13F2F009F79FD /* MainMenu.xib in Resources */,
+				0D2B042117B13FD9009F79FD /* icon.icns in Resources */,
+				0D2B042617B1459C009F79FD /* MainWindowController.xib in Resources */,
+				0D391E2917B178B8008C15A3 /* assniffer in Resources */,
+				0D391E2A17B178B8008C15A3 /* changelog.txt in Resources */,
+				0D391E2B17B178B8008C15A3 /* license in Resources */,
+				0D0810C117B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2B041417B13F2F009F79FD /* InfoPlist.strings in Resources */,
+				0D0810C217B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +374,8 @@
 				0D2B03F617B13F2E009F79FD /* main.m in Sources */,
 				0D2B03FD17B13F2E009F79FD /* AppDelegate.m in Sources */,
 				0D2B040317B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld in Sources */,
+				0D2B042517B1459C009F79FD /* MainWindowController.m in Sources */,
+				0D0810BF17B70F2600BF5E6D /* PreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2B041717B13F2F009F79FD /* iRadio_Capture_2_0Tests.m in Sources */,
+				0D0810C017B70F2600BF5E6D /* PreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,14 +413,6 @@
 				0D2B03F917B13F2E009F79FD /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		0D2B03FE17B13F2F009F79FD /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D2B03FF17B13F2F009F79FD /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		0D2B041217B13F2F009F79FD /* InfoPlist.strings */ = {
@@ -456,6 +558,7 @@
 				0D2B041C17B13F2F009F79FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D2B041D17B13F2F009F79FD /* Build configuration list for PBXNativeTarget "iRadio Capture 2.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +567,7 @@
 				0D2B041F17B13F2F009F79FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainWindowController.h"
 
 @implementation AppDelegate
 
@@ -17,6 +18,11 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    NSApplication *app = [NSApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationWillTerminate:)
+     name:NSApplicationWillTerminateNotification object:app];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "A-Programmer-s-Crucible.iRadio_Capture_2_0" in the user's Application Support directory.
@@ -179,5 +185,7 @@
 
     return NSTerminateNow;
 }
+
+
 
 @end
