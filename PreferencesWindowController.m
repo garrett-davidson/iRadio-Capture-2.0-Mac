@@ -3,8 +3,23 @@
 //  iRadio Capture 2.0
 //
 //  Created by Garrett Davidson on 8/11/13.
-//  Copyright (c) 2013 Garrett Davidson. All rights reserved.
+//  Copyright (c) 2013 Garrett Davidson.
 //
+
+//This file is part of iRadio Capture 2.0.
+//
+//iRadio Capture 2.0 is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
+//
+//iRadio Capture 2.0 is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with iRadio Capture 2.0.  If not, see <http://www.gnu.org/licenses/>.
 
 #import "PreferencesWindowController.h"
 
@@ -71,6 +86,9 @@
     [self.customFolderCheckbox setNeedsDisplay];
     [self.chooseCustomFolderButton setEnabled:!saveToiTunesState];
     self.customFolderCheckbox.state = !saveToiTunesState;
+
+    //Only until I figure out how to check the bitrate of songs without iTunes
+    [self.overwriteLowerBitrateCheckbox setEnabled:self.iTunesCheckbox.state];
 }
 - (IBAction)saveChanges:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

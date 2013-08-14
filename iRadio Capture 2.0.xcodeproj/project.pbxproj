@@ -26,9 +26,9 @@
 		0D2B042117B13FD9009F79FD /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B042017B13FD9009F79FD /* icon.icns */; };
 		0D2B042517B1459C009F79FD /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B042317B1459C009F79FD /* MainWindowController.m */; };
 		0D2B042617B1459C009F79FD /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B042417B1459C009F79FD /* MainWindowController.xib */; };
+		0D2EA96E17BBDCBA004769E5 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D2EA96D17BBDCBA004769E5 /* readme.txt */; };
+		0D2EA97017BBDF27004769E5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D2EA96F17BBDF27004769E5 /* LICENSE.txt */; };
 		0D391E2917B178B8008C15A3 /* assniffer in Resources */ = {isa = PBXBuildFile; fileRef = 0D391E1417B178B8008C15A3 /* assniffer */; };
-		0D391E2A17B178B8008C15A3 /* changelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D391E1517B178B8008C15A3 /* changelog.txt */; };
-		0D391E2B17B178B8008C15A3 /* license in Resources */ = {isa = PBXBuildFile; fileRef = 0D391E1617B178B8008C15A3 /* license */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +72,9 @@
 		0D2B042317B1459C009F79FD /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		0D2B042417B1459C009F79FD /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		0D2B042717B147D0009F79FD /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		0D2EA96D17BBDCBA004769E5 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		0D2EA96F17BBDF27004769E5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		0D391E1417B178B8008C15A3 /* assniffer */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = assniffer; sourceTree = "<group>"; };
-		0D391E1517B178B8008C15A3 /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
-		0D391E1617B178B8008C15A3 /* license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license; sourceTree = "<group>"; };
 		0D391E1917B178B8008C15A3 /* http.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = http.cpp; sourceTree = "<group>"; };
 		0D391E1A17B178B8008C15A3 /* http.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c; fileEncoding = 4; path = http.h; sourceTree = "<group>"; };
 		0D391E1B17B178B8008C15A3 /* http.o */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = http.o; sourceTree = "<group>"; };
@@ -161,6 +161,7 @@
 		0D2B03EF17B13F2E009F79FD /* iRadio Capture 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				0D2EA96F17BBDF27004769E5 /* LICENSE.txt */,
 				0D2B042717B147D0009F79FD /* iTunes.h */,
 				0D2B03FB17B13F2E009F79FD /* AppDelegate.h */,
 				0D2B03FC17B13F2E009F79FD /* AppDelegate.m */,
@@ -212,9 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				0D391E1417B178B8008C15A3 /* assniffer */,
-				0D391E1517B178B8008C15A3 /* changelog.txt */,
-				0D391E1617B178B8008C15A3 /* license */,
 				0D391E1717B178B8008C15A3 /* source */,
+				0D2EA96D17BBDCBA004769E5 /* readme.txt */,
 			);
 			path = assniffer02;
 			sourceTree = "<group>";
@@ -333,9 +333,9 @@
 				0D2B042117B13FD9009F79FD /* icon.icns in Resources */,
 				0D2B042617B1459C009F79FD /* MainWindowController.xib in Resources */,
 				0D391E2917B178B8008C15A3 /* assniffer in Resources */,
-				0D391E2A17B178B8008C15A3 /* changelog.txt in Resources */,
-				0D391E2B17B178B8008C15A3 /* license in Resources */,
 				0D0810C117B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */,
+				0D2EA96E17BBDCBA004769E5 /* readme.txt in Resources */,
+				0D2EA97017BBDF27004769E5 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

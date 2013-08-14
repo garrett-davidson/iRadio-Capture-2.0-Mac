@@ -27,7 +27,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013 Garrett Davidson. All rights reserved.</string>
+	<string>Copyright © 2013 Garrett Davidson.</string>
 	<key>NSMainNibFile</key>
 	<string>MainWindowController</string>
 	<key>NSPrincipalClass</key>

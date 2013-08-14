@@ -3,7 +3,7 @@
 //  iRadio Capture 2.0
 //
 //  Created by Garrett Davidson on 8/6/13.
-//  Copyright (c) 2013 Garrett Davidson. All rights reserved.
+//  Copyright (c) 2013 Garrett Davidson.
 //
 
 #import <Cocoa/Cocoa.h>

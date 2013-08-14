@@ -1,0 +1,1 @@
+Assniffer (Copyright 2004 Cockos Incorporated) is a GNU GPL program used by iRadio Capture.  I (Garrett Davidson) have modified the source for better use with iRadio Capture.  The full modified source as well as the modified binary can be found within this folder.

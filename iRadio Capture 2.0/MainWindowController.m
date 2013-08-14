@@ -3,8 +3,24 @@
 //  iRadio Capture 2.0
 //
 //  Created by Garrett Davidson on 8/6/13.
-//  Copyright (c) 2013 Garrett Davidson. All rights reserved.
+//  Copyright (c) 2013 Garrett Davidson.
 //
+
+//This file is part of iRadio Capture 2.0.
+//
+//iRadio Capture 2.0 is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
+//
+//iRadio Capture 2.0 is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with iRadio Capture 2.0.  If not, see <http://www.gnu.org/licenses/>.
+
 
 #import "MainWindowController.h"
 #import <AVFoundation/AVFoundation.h>
@@ -258,7 +274,7 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
             NSLog(@"song path: %@", tempSongPath);
             foundSong = true;
             
-            if (foundSong) [NSThread detachNewThreadSelector:@selector(captureSong) toTarget:self withObject:nil];
+            if (foundPicture) [NSThread detachNewThreadSelector:@selector(captureSong) toTarget:self withObject:nil];
         }
     }
 }
@@ -285,15 +301,49 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
     //move the song the tmp directory so changing it won't set off the eventStream
     NSString *newPath = [NSString stringWithFormat:@"%@input", tempDirectory];
     NSString *site = tags[3];
-    if ([site rangeOfString:@"last"].location != NSNotFound) newPath = [newPath stringByAppendingString:@".mp3"];
-    else newPath = [newPath stringByAppendingString:@".m4a"];
 
-    //[manager moveItemAtPath:tempSongPath toPath:newPath error:nil];
+
+    
+
+    //Don't ask me why the preset needs to change
+    //it appears to be a bug on Apple's end
+    NSString *preset;
+
+    //Last.fm uses .mp3 extension
+    if ([site rangeOfString:@"last"].location != NSNotFound)
+    {
+        newPath = [newPath stringByAppendingString:@".mp3"];
+        preset = AVAssetExportPresetAppleM4A;
+    }
+
+    //Pandora uses .m4a
+    else {
+        preset = AVAssetExportPresetPassthrough;
+        newPath = [newPath stringByAppendingString:@".m4a"];
+    }
+
     NSURL *originalURL = [NSURL fileURLWithPath:[tempSongPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     tempSongPath = newPath;
+    NSURL *inputURL = [NSURL fileURLWithPath:[tempSongPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+    /*
+    NSError *wrapperError;
+    NSError *writeError;
+    NSFileWrapper *wrapper = [[NSFileWrapper alloc] initWithURL:originalURL options:NSFileWrapperReadingImmediate error:&wrapperError];
+    [wrapper writeToURL:inputURL options:NSFileWrapperWritingWithNameUpdating originalContentsURL:originalURL error:&writeError];
+    if (wrapperError)
+    {
+        NSLog(@"Wrapper error: %@", wrapperError);
+    }
+
+    if (writeError)
+    {
+        NSLog(@"Write error: %@", writeError);
+    }
+    */
+   [manager copyItemAtURL:originalURL toURL:inputURL error:nil];
 
     NSLog(@"Capture song now");
-#warning uncomment these
     foundSong = false;
     foundPicture = false;
 
@@ -304,7 +354,7 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
     songInfo.extraAttributes = atts;
 
     
-    NSURL *inputURL = [NSURL fileURLWithPath:[tempSongPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL: inputURL options:nil];
 
     NSURL *outputURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", tempDirectory, @"output.m4a"] isDirectory:NO];
@@ -312,13 +362,16 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
     
     AVAssetExportSession *session;
     //if ([picturePath.lastPathComponent rangeOfString:@".m4a"].location != NSNotFound)
-        session = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetAppleM4A];
+
+    
+
+    
+        session = [AVAssetExportSession exportSessionWithAsset:asset presetName:preset];
     NSArray *metadataArray = metadataFromAssetDictionary(nil, atts, NO, nil, AVMetadataKeySpaceiTunes);
     session.metadata = metadataArray;
     session.outputFileType = AVFileTypeAppleM4A;
-
-    NSFileWrapper *wrapper = [[NSFileWrapper alloc] initWithURL:originalURL options:NSFileWrapperReadingImmediate error:nil];
-    [wrapper writeToURL:inputURL options:NSFileWrapperWritingWithNameUpdating originalContentsURL:originalURL error:nil];
+    
+    
 
     session.outputURL = outputURL;
     NSLog(@"Asset: %@", asset);
@@ -350,6 +403,7 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
             {
                 NSLog(@"%@: %@", key, [session.error.userInfo objectForKey:key]);
             }
+            [self clearTMP];
         }
     }];
 
@@ -361,6 +415,32 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
     if ([defaults boolForKey:@"useCustomFolder"])
     {
         //save to folder
+
+        NSString *folderPath = [defaults objectForKey:@"customFolder"];
+
+        NSFileManager *manager = [NSFileManager defaultManager];
+
+        //create the directory if it doesn't exist
+        //it should have already been created when the folder was set, but just in case
+        BOOL positive = YES;
+        if (![manager fileExistsAtPath:folderPath isDirectory:&positive]) [manager createDirectoryAtPath:folderPath withIntermediateDirectories:YES attributes:nil error:nil];
+
+        NSString *outputPath = [NSString stringWithFormat:@"%@/%@/%@/", folderPath, tags[1], tags[2]];
+        //create the output hierarchy if it doesn't exist
+        if (![manager fileExistsAtPath:outputPath isDirectory:&positive]) [manager createDirectoryAtPath:outputPath withIntermediateDirectories:YES attributes:nil error:nil];
+
+        BOOL duplicate = false;
+        outputPath = [outputPath stringByAppendingFormat:@"%@.m4a", tags[0]];
+        if ([manager fileExistsAtPath:outputPath])
+        {
+            duplicate = true;
+        }
+
+        else {
+            [manager moveItemAtPath:outputURL.path toPath:outputPath error:nil];
+        }
+
+        //Add bitrate check here
     }
 
     else
