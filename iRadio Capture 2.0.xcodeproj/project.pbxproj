@@ -14,7 +14,6 @@
 		0D0810C117B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0810BE17B70F2600BF5E6D /* PreferencesWindowController.xib */; };
 		0D0810C217B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0810BE17B70F2600BF5E6D /* PreferencesWindowController.xib */; };
 		0D2B03EA17B13F2E009F79FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2B03E917B13F2E009F79FD /* Cocoa.framework */; };
-		0D2B03F417B13F2E009F79FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03F217B13F2E009F79FD /* InfoPlist.strings */; };
 		0D2B03F617B13F2E009F79FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B03F517B13F2E009F79FD /* main.m */; };
 		0D2B03FA17B13F2E009F79FD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B03F817B13F2E009F79FD /* Credits.rtf */; };
 		0D2B03FD17B13F2E009F79FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B03FC17B13F2E009F79FD /* AppDelegate.m */; };
@@ -26,8 +25,35 @@
 		0D2B042117B13FD9009F79FD /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B042017B13FD9009F79FD /* icon.icns */; };
 		0D2B042517B1459C009F79FD /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B042317B1459C009F79FD /* MainWindowController.m */; };
 		0D2B042617B1459C009F79FD /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B042417B1459C009F79FD /* MainWindowController.xib */; };
-		0D2EA96E17BBDCBA004769E5 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D2EA96D17BBDCBA004769E5 /* readme.txt */; };
 		0D2EA97017BBDF27004769E5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0D2EA96F17BBDF27004769E5 /* LICENSE.txt */; };
+		0D2EA98C17BBE710004769E5 /* LICENSE.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2EA96F17BBDF27004769E5 /* LICENSE.txt */; };
+		0D2EA98D17BBE710004769E5 /* iTunes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2B042717B147D0009F79FD /* iTunes.h */; };
+		0D2EA98E17BBE710004769E5 /* AppDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2B03FB17B13F2E009F79FD /* AppDelegate.h */; };
+		0D2EA98F17BBE710004769E5 /* AppDelegate.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2B03FC17B13F2E009F79FD /* AppDelegate.m */; };
+		0D2EA99017BBE710004769E5 /* MainWindowController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2B042217B1459C009F79FD /* MainWindowController.h */; };
+		0D2EA99117BBE710004769E5 /* MainWindowController.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2B042317B1459C009F79FD /* MainWindowController.m */; };
+		0D2EA99217BBE710004769E5 /* PreferencesWindowController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D0810BC17B70F2600BF5E6D /* PreferencesWindowController.h */; };
+		0D2EA99317BBE710004769E5 /* PreferencesWindowController.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D0810BD17B70F2600BF5E6D /* PreferencesWindowController.m */; };
+		0D2EA99417BBE710004769E5 /* PreferencesWindowController.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D0810BE17B70F2600BF5E6D /* PreferencesWindowController.xib */; };
+		0D2EA99517BBE710004769E5 /* MainWindowController.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2B042417B1459C009F79FD /* MainWindowController.xib */; };
+		0D2EA99617BBE710004769E5 /* iRadio_Capture_2_0.xcdatamodeld in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2B040117B13F2F009F79FD /* iRadio_Capture_2_0.xcdatamodeld */; };
+		0D2EA9BD17BBE966004769E5 /* http.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1917B178B8008C15A3 /* http.cpp */; };
+		0D2EA9BE17BBE96D004769E5 /* http.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1A17B178B8008C15A3 /* http.h */; };
+		0D2EA9BF17BBE972004769E5 /* http.o in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1B17B178B8008C15A3 /* http.o */; };
+		0D2EA9C017BBE977004769E5 /* Makefile in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1C17B178B8008C15A3 /* Makefile */; };
+		0D2EA9C117BBE97F004769E5 /* platform.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1D17B178B8008C15A3 /* platform.h */; };
+		0D2EA9C217BBE97F004769E5 /* sniff.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1E17B178B8008C15A3 /* sniff.cpp */; };
+		0D2EA9C317BBE97F004769E5 /* sniff.dsp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1F17B178B8008C15A3 /* sniff.dsp */; };
+		0D2EA9C417BBE97F004769E5 /* sniff.dsw in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2017B178B8008C15A3 /* sniff.dsw */; };
+		0D2EA9C517BBE97F004769E5 /* sniff.o in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2117B178B8008C15A3 /* sniff.o */; };
+		0D2EA9C617BBE97F004769E5 /* tcp.cpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2217B178B8008C15A3 /* tcp.cpp */; };
+		0D2EA9C717BBE97F004769E5 /* tcp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2317B178B8008C15A3 /* tcp.h */; };
+		0D2EA9C817BBE97F004769E5 /* tcp.o in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2417B178B8008C15A3 /* tcp.o */; };
+		0D2EA9C917BBE988004769E5 /* heapbuf.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2617B178B8008C15A3 /* heapbuf.h */; };
+		0D2EA9CA17BBE988004769E5 /* ptrlist.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2717B178B8008C15A3 /* ptrlist.h */; };
+		0D2EA9CB17BBE988004769E5 /* queue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E2817B178B8008C15A3 /* queue.h */; };
+		0D2EA9CC17BBE991004769E5 /* assniffer in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D391E1417B178B8008C15A3 /* assniffer */; };
+		0D2EA9CD17BBE991004769E5 /* readme.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D2EA96D17BBDCBA004769E5 /* readme.txt */; };
 		0D391E2917B178B8008C15A3 /* assniffer in Resources */ = {isa = PBXBuildFile; fileRef = 0D391E1417B178B8008C15A3 /* assniffer */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +66,55 @@
 			remoteInfo = "iRadio Capture 2.0";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0D2EA98B17BBE6D0004769E5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = source;
+			dstSubfolderSpec = 7;
+			files = (
+				0D2EA98C17BBE710004769E5 /* LICENSE.txt in CopyFiles */,
+				0D2EA98D17BBE710004769E5 /* iTunes.h in CopyFiles */,
+				0D2EA98E17BBE710004769E5 /* AppDelegate.h in CopyFiles */,
+				0D2EA98F17BBE710004769E5 /* AppDelegate.m in CopyFiles */,
+				0D2EA99017BBE710004769E5 /* MainWindowController.h in CopyFiles */,
+				0D2EA99117BBE710004769E5 /* MainWindowController.m in CopyFiles */,
+				0D2EA99217BBE710004769E5 /* PreferencesWindowController.h in CopyFiles */,
+				0D2EA99317BBE710004769E5 /* PreferencesWindowController.m in CopyFiles */,
+				0D2EA99417BBE710004769E5 /* PreferencesWindowController.xib in CopyFiles */,
+				0D2EA99517BBE710004769E5 /* MainWindowController.xib in CopyFiles */,
+				0D2EA99617BBE710004769E5 /* iRadio_Capture_2_0.xcdatamodeld in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D2EA9BC17BBE94F004769E5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = assniffersource;
+			dstSubfolderSpec = 7;
+			files = (
+				0D2EA9CC17BBE991004769E5 /* assniffer in CopyFiles */,
+				0D2EA9CD17BBE991004769E5 /* readme.txt in CopyFiles */,
+				0D2EA9C917BBE988004769E5 /* heapbuf.h in CopyFiles */,
+				0D2EA9CA17BBE988004769E5 /* ptrlist.h in CopyFiles */,
+				0D2EA9CB17BBE988004769E5 /* queue.h in CopyFiles */,
+				0D2EA9C117BBE97F004769E5 /* platform.h in CopyFiles */,
+				0D2EA9C217BBE97F004769E5 /* sniff.cpp in CopyFiles */,
+				0D2EA9C317BBE97F004769E5 /* sniff.dsp in CopyFiles */,
+				0D2EA9C417BBE97F004769E5 /* sniff.dsw in CopyFiles */,
+				0D2EA9C517BBE97F004769E5 /* sniff.o in CopyFiles */,
+				0D2EA9C617BBE97F004769E5 /* tcp.cpp in CopyFiles */,
+				0D2EA9C717BBE97F004769E5 /* tcp.h in CopyFiles */,
+				0D2EA9C817BBE97F004769E5 /* tcp.o in CopyFiles */,
+				0D2EA9C017BBE977004769E5 /* Makefile in CopyFiles */,
+				0D2EA9BF17BBE972004769E5 /* http.o in CopyFiles */,
+				0D2EA9BE17BBE96D004769E5 /* http.h in CopyFiles */,
+				0D2EA9BD17BBE966004769E5 /* http.cpp in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D0810AB17B6DB7D00BF5E6D /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iTunes.h; path = ../iTunes.h; sourceTree = "<group>"; };
@@ -119,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				0D2B042017B13FD9009F79FD /* icon.icns */,
-				0D391E1317B178B8008C15A3 /* assniffer02 */,
 				0D2B03EF17B13F2E009F79FD /* iRadio Capture 2.0 */,
 				0D2B040F17B13F2F009F79FD /* iRadio Capture 2.0Tests */,
 				0D2B03E817B13F2E009F79FD /* Frameworks */,
@@ -161,6 +235,7 @@
 		0D2B03EF17B13F2E009F79FD /* iRadio Capture 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				0D391E1317B178B8008C15A3 /* assniffer02 */,
 				0D2EA96F17BBDF27004769E5 /* LICENSE.txt */,
 				0D2B042717B147D0009F79FD /* iTunes.h */,
 				0D2B03FB17B13F2E009F79FD /* AppDelegate.h */,
@@ -216,7 +291,8 @@
 				0D391E1717B178B8008C15A3 /* source */,
 				0D2EA96D17BBDCBA004769E5 /* readme.txt */,
 			);
-			path = assniffer02;
+			name = assniffer02;
+			path = ../assniffer02;
 			sourceTree = "<group>";
 		};
 		0D391E1717B178B8008C15A3 /* source */ = {
@@ -267,6 +343,8 @@
 				0D2B03E217B13F2E009F79FD /* Sources */,
 				0D2B03E317B13F2E009F79FD /* Frameworks */,
 				0D2B03E417B13F2E009F79FD /* Resources */,
+				0D2EA98B17BBE6D0004769E5 /* CopyFiles */,
+				0D2EA9BC17BBE94F004769E5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -328,13 +406,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D2B03F417B13F2E009F79FD /* InfoPlist.strings in Resources */,
 				0D2B03FA17B13F2E009F79FD /* Credits.rtf in Resources */,
 				0D2B042117B13FD9009F79FD /* icon.icns in Resources */,
 				0D2B042617B1459C009F79FD /* MainWindowController.xib in Resources */,
 				0D391E2917B178B8008C15A3 /* assniffer in Resources */,
 				0D0810C117B70F2600BF5E6D /* PreferencesWindowController.xib in Resources */,
-				0D2EA96E17BBDCBA004769E5 /* readme.txt in Resources */,
 				0D2EA97017BBDF27004769E5 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

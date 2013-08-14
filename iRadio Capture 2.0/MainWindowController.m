@@ -133,7 +133,7 @@ static MainWindowController *mainWindowInstance = nil;
         downloadsPath = (__bridge CFStringRef)(downloadsPathString);
         
         CFStringRef assnifferOutputDirectory;
-        NSString *assnifferOutputDirecotryString = [NSString stringWithFormat:@"%@/songsTMP", tempDirectory];
+        NSString *assnifferOutputDirecotryString = [NSString stringWithFormat:@"%@songsTMP", tempDirectory];
         NSLog(@"%@", assnifferOutputDirecotryString);
         assnifferOutputDirectory = (__bridge CFStringRef)(assnifferOutputDirecotryString);
 
@@ -285,15 +285,15 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDictionary *dict = [manager attributesOfItemAtPath:tempSongPath error:nil];
 
-    unsigned long long size = [dict fileSize];
-    unsigned long long newSize;
+    NSNumber *size = [NSNumber numberWithLongLong:[dict fileSize]];
+    NSNumber *newSize;
     NSLog(@"Watching file size");
     self.statusLabel.stringValue = @"Buffering";
     while (size != newSize)
     {
         size = newSize;
         sleep(5);
-        newSize = [[manager attributesOfItemAtPath:tempSongPath error:nil] fileSize];
+        newSize = [NSNumber numberWithLongLong:[[manager attributesOfItemAtPath:tempSongPath error:nil] fileSize]];
     }
 
     NSArray *tags = [picturePath.lastPathComponent componentsSeparatedByString:@"_"];
