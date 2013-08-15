@@ -33,10 +33,13 @@
     bool foundPicture;
     bool foundSong;
     bool started;
+    bool previousSongDidNotFinish;
+    bool taggingInProgress;
     NSString *picturePath;
     NSString *tempSongPath;
     NSTask *assniffer;
     NSString *tempDirectory;
+    NSDate *newestPictureDate;
 }
 @property (weak) IBOutlet NSButton *startButton;
 @property (weak) IBOutlet NSMenuItem *startMenuItem;
@@ -70,9 +73,6 @@ static MainWindowController *mainWindowInstance = nil;
 
     tempDirectory = [NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), @"iRadio_Capture/"];
 
-    [self clearTMP];
-
-
     //Yes I know I did this wrong...
     //Deal with it
     NSApplication *app = [NSApplication sharedApplication];
@@ -102,21 +102,36 @@ static MainWindowController *mainWindowInstance = nil;
     BOOL positive = true;
     if (![manager fileExistsAtPath:path isDirectory:&positive]) [manager createDirectoryAtPath:path withIntermediateDirectories:FALSE attributes:nil error:nil];
     if (![manager fileExistsAtPath:[path stringByAppendingString:@"songsTMP"] isDirectory:&positive]) [manager createDirectoryAtPath:[path stringByAppendingString:@"songsTMP"] withIntermediateDirectories:FALSE attributes:nil error:nil];
-    NSArray *tmpContents = [manager contentsOfDirectoryAtPath:path error:nil];
-    for (NSString *file in tmpContents)
+    NSArray *tmpContents = [manager contentsOfDirectoryAtURL:[NSURL fileURLWithPath:path] includingPropertiesForKeys:[NSArray arrayWithObject:NSURLCreationDateKey] options:0 error:nil];
+    for (NSURL *file in tmpContents)
     {
-        if (![file isEqualToString:@"songsTMP"])
-            [manager removeItemAtPath:[NSString stringWithFormat:@"%@%@", path, file] error:nil];
-        else
+        NSDate *creationDate = nil;
+        [file getResourceValue:&creationDate forKey:NSURLCreationDateKey error:nil];
+
+        if ([creationDate laterDate:newestPictureDate] == newestPictureDate)
         {
-            NSString *subPath = [NSString stringWithFormat:@"%@%@", path, file];
-            NSArray *tmpSubContents = [manager contentsOfDirectoryAtPath:subPath error:nil];
-            for (NSString *subFile in tmpSubContents)
+
+            if (![file.lastPathComponent isEqualToString:@"songsTMP"])
+                [manager removeItemAtURL:file error:nil];
+            else
             {
-                [manager removeItemAtPath:[NSString stringWithFormat:@"%@/%@", subPath, subFile] error:nil];
+                NSArray *tmpSubContents = [manager contentsOfDirectoryAtURL:file includingPropertiesForKeys:nil options:0 error:nil];
+                for (NSURL *subFile in tmpSubContents)
+                {
+                    [subFile getResourceValue:&creationDate forKey:NSURLCreationDateKey error:nil];
+                    if ([creationDate laterDate:newestPictureDate] == newestPictureDate) [manager removeItemAtURL:subFile error:nil];
+                }
             }
         }
+
+        else if ([file.lastPathComponent isEqualToString:@"output.m4a"])
+        {
+            [manager removeItemAtURL:file error:nil];
+        }
     }
+    tempSongPath = nil;
+    picturePath = nil;
+    taggingInProgress = false;
 }
 
 //./assniffer /Users/garrettdavidson/Downloads/assniffer02/source/assniffer/test -d 1 -mimetype audio
@@ -124,9 +139,12 @@ static MainWindowController *mainWindowInstance = nil;
 - (IBAction)startStop:(id)sender {
     started = !started;
 
+    newestPictureDate = [NSDate dateWithTimeIntervalSinceNow:0];
+    [self clearTMP];
     
     if (!stream)
     {
+        
         CFStringRef downloadsPath;
         NSString *downloadsPathString = [NSString stringWithFormat:@"%@/Downloads", NSHomeDirectory()];
         NSLog(@"%@", downloadsPathString);
@@ -146,6 +164,7 @@ static MainWindowController *mainWindowInstance = nil;
         stream = FSEventStreamCreate(NULL, &foundSomething, NULL, pathsToWath, kFSEventStreamEventIdSinceNow, 3, kFSEventStreamEventFlagItemCreated);
 
         FSEventStreamScheduleWithRunLoop(stream, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+        
     }
 
     if (started)
@@ -160,6 +179,7 @@ static MainWindowController *mainWindowInstance = nil;
         NSString *assnifferOutputDirecotryString = [NSString stringWithFormat:@"%@songsTMP", tempDirectory];
         NSArray *args = [NSArray arrayWithObjects:assnifferOutputDirecotryString, @"-d", NIC, @"-mimetype", @"audio", nil];
         assniffer = [NSTask launchedTaskWithLaunchPath:path arguments:args];
+        
     }
 
     else
@@ -174,7 +194,7 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
 {
     char **paths = eventPaths;
 
-    
+    bool songPathhDiscovered = false;
     for (int i = 0; i < numEvents; i++)
     {
         NSString *path = [NSString stringWithUTF8String:paths[i]];
@@ -191,10 +211,12 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
             [mainWindowInstance findPicture:path];
         }
 
-        else
+        else if ([path rangeOfString:@"/0/"].location != NSNotFound || [path rangeOfString:@"/access/"].location != NSNotFound)
         {
             //look for the song
             [mainWindowInstance findSong:path];
+            songPathhDiscovered = true;
+            
         }
 
         
@@ -203,7 +225,13 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
 
 - (void) findPicture:(NSString *)downloadsPath
 {
-    if (!foundPicture)
+
+    while (taggingInProgress)
+    {
+        sleep(5);
+    }
+
+    if (!foundPicture | previousSongDidNotFinish)
     {
 
         //FSEventStream doesn't tell you what file caused the event to fire
@@ -213,7 +241,6 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
         NSURL *downloadsURL = [NSURL fileURLWithPath:downloadsPath isDirectory:YES];
         NSArray *fileArray = [manager contentsOfDirectoryAtURL:downloadsURL includingPropertiesForKeys:[NSArray arrayWithObject:NSURLCreationDateKey] options:NSDirectoryEnumerationSkipsHiddenFiles | NSDirectoryEnumerationSkipsPackageDescendants | NSDirectoryEnumerationSkipsSubdirectoryDescendants error:nil];
 
-        NSDate *newestDate = [NSDate dateWithTimeIntervalSinceReferenceDate:0];
         NSURL *newestFile;
         for (NSURL *filePath in fileArray)
         {
@@ -222,69 +249,115 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
                 NSDate *creationDate = nil;
                 [filePath getResourceValue:&creationDate forKey:NSURLCreationDateKey error:nil];
 
-                if ([newestDate laterDate:creationDate] == creationDate)
+                if ([creationDate laterDate:newestPictureDate] == creationDate)
                 {
                     if ([[filePath lastPathComponent] componentsSeparatedByString:@"_"].count == 4)
                     {
-                        newestDate = creationDate;
+                        newestPictureDate = creationDate;
                         newestFile = filePath;
                     }
                 }
             }
         }
 
-        NSLog(@"Newest file: %@", newestFile);
-
-
-        NSString *newestFileString = [newestFile path];
-
-        //if the newest picture has changed from the last time this event fired
-        if (![newestFile.lastPathComponent isEqualToString:picturePath.lastPathComponent])
+        if (newestFile)
         {
-            foundPicture = true;
 
-            NSString *newPath = [NSString stringWithFormat:@"%@%@", tempDirectory, [newestFile lastPathComponent]];
-            [manager moveItemAtPath:newestFileString toPath:newPath error:nil];
-            picturePath = newPath;
-            NSLog(@"%@", picturePath);
-            
-            //Update UI
-            self.statusLabel.stringValue = @"Found Picture";
-            NSArray *tags = [picturePath.lastPathComponent componentsSeparatedByString:@"_"];
-            NSString *labelInfo = [NSString stringWithFormat:@"%@ by %@ on %@", tags[0], tags[1], tags[2]];
-            self.songInfoLabel.stringValue = labelInfo;
-            NSData *imageData = [NSData dataWithContentsOfFile:picturePath];
-            self.albumArtImageWell.image = [[NSImage alloc] initWithData:imageData];
+            NSLog(@"Newest file: %@", newestFile);
 
-            if (foundSong) [NSThread detachNewThreadSelector:@selector(captureSong) toTarget:self withObject:nil];
+            //in case the image isn't finished downloading
+            //(sometimes chrome decides to take a while to initiate the download)
+            while ([newestFile.lastPathComponent rangeOfString:@"crdownload"].location != NSNotFound)
+            {
+                sleep(5);
+            }
+
+            NSString *newestFileString = [newestFile path];
+
+            //if the newest picture has changed from the last time this event fired
+            if (![newestFile.lastPathComponent isEqualToString:picturePath.lastPathComponent])
+            {
+                foundPicture = true;
+
+                NSString *newPath = [NSString stringWithFormat:@"%@%@", tempDirectory, [newestFile lastPathComponent]];
+                [manager moveItemAtPath:newestFileString toPath:newPath error:nil];
+                if ([manager fileExistsAtPath:picturePath]) [manager removeItemAtPath:picturePath error:nil];
+                picturePath = newPath;
+                NSLog(@"%@", picturePath);
+                
+                //Update UI
+                NSArray *tags = [picturePath.lastPathComponent componentsSeparatedByString:@"_"];
+                NSString *labelInfo = [NSString stringWithFormat:@"%@ by %@ on %@", tags[0], tags[1], tags[2]];
+                self.songInfoLabel.stringValue = labelInfo;
+                NSData *imageData = [NSData dataWithContentsOfFile:picturePath];
+                self.albumArtImageWell.image = [[NSImage alloc] initWithData:imageData];
+
+                if (foundSong) [NSThread detachNewThreadSelector:@selector(captureSong) toTarget:self withObject:nil];
+            }
         }
 
     }
 }
 
--(void) findSong:(NSString *) assnifferOutputDirectory
+-(void) findSong:(NSString *) path
 {
-    if (!foundSong)
+
+    while (taggingInProgress)
     {
-        NSFileManager *manager = [NSFileManager defaultManager];
-        NSArray *subs = [manager subpathsOfDirectoryAtPath:assnifferOutputDirectory error:nil];
-        if ([subs lastObject])
+        sleep(5);
+    }
+
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSArray *subs = [manager subpathsAtPath:path];
+
+    if (subs[0])
+    {
+        NSString *newPath = [NSString stringWithFormat:@"%@%@", path, subs[0]];
+        
+        if (![tempSongPath isEqualToString:newPath])
         {
-            tempSongPath = [NSString stringWithFormat:@"%@%@", assnifferOutputDirectory, [subs lastObject]];
-            NSLog(@"song path: %@", tempSongPath);
+            //If everything is going properly
+            if (!tempSongPath)
+            {
+                tempSongPath = newPath;
+                self.statusLabel.stringValue = @"Buffering";
+                NSLog(@"song path: %@", tempSongPath);
+            }
+
+            //Otherwise the last song probably got interrupted (e.g. skipped, lost internet connection, etc.)
+            //or the last image didnt download
+            else if (tempSongPath && !previousSongDidNotFinish)
+            {
+                tempSongPath = newPath;
+                previousSongDidNotFinish = true;
+                self.statusLabel.stringValue = @"Buffering";
+                NSLog(@"Song path changed: %@", tempSongPath);
+            }
+
+            //if it doesn't meet either of the above, it is an extraneous call
+        }
+
+
+        else
+        {
+            //NSLog(@"error");
             foundSong = true;
-            
+            previousSongDidNotFinish = false;
             if (foundPicture) [NSThread detachNewThreadSelector:@selector(captureSong) toTarget:self withObject:nil];
         }
     }
+    
+
 }
 
 - (void)captureSong
 {
+    taggingInProgress = true;
     //make sure the song is finished transferring
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDictionary *dict = [manager attributesOfItemAtPath:tempSongPath error:nil];
 
+    /*
     NSNumber *size = [NSNumber numberWithLongLong:[dict fileSize]];
     NSNumber *newSize;
     NSLog(@"Watching file size");
@@ -294,7 +367,7 @@ void foundSomething (ConstFSEventStreamRef streamRef, void *clientCallBackInfo, 
         size = newSize;
         sleep(5);
         newSize = [NSNumber numberWithLongLong:[[manager attributesOfItemAtPath:tempSongPath error:nil] fileSize]];
-    }
+    }*/
 
     NSArray *tags = [picturePath.lastPathComponent componentsSeparatedByString:@"_"];
 
